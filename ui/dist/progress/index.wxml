@@ -1,10 +1,16 @@
-<view class="i-class i-progress i-progress-{{ status }} {{ !hideInfo ? 'i-progress-show-info' : '' }}">
-    <view class="i-progress-outer">
-        <view class="i-progress-inner">
-            <view class="i-progress-bg" style="width: {{percent}}%;height: {{strokeWidth}}px"></view>
-        </view>
+<wxs src="./index.wxs" module="getters" />
+
+<view class="van-progress custom-class" style="height: {{ strokeWidthUnit }};">
+  <view
+    class="van-progress__portion"
+    style="width: {{ percentage }}%; background: {{ inactive ? '#cacaca' : color }}"
+  >
+    <view
+      wx:if="{{ showPivot && getters.text(pivotText, percentage) }}"
+      style="color: {{ textColor }}; background: {{ pivotColor ? pivotColor : inactive ? '#cacaca' : color }}"
+      class="van-progress__pivot"
+    >
+      {{ getters.text(pivotText, percentage) }}
     </view>
-    <view class="i-progress-text" wx:if="{{ !hideInfo }}">
-        <view class="i-progress-text-inner">{{ percent }}%</view>
-    </view>
+  </view>
 </view>

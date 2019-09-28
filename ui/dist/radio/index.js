@@ -1,56 +1,60 @@
-const prefixCls = 'i-radio';
-
-Component({
-    externalClasses: ['i-class'],
-    relations: {
-        '../radio-group/index': {
-            type: 'parent'
+import { VantComponent } from '../common/component';
+import { addUnit } from '../common/utils';
+VantComponent({
+    field: true,
+    relation: {
+        name: 'radio-group',
+        type: 'ancestor',
+        linked(target) {
+            this.parent = target;
+        },
+        unlinked() {
+            this.parent = null;
         }
     },
-    properties: {
-        value: {
+    classes: ['icon-class', 'label-class'],
+    props: {
+        value: null,
+        disabled: Boolean,
+        useIconSlot: Boolean,
+        checkedColor: String,
+        labelPosition: {
             type: String,
-            value: ''
+            value: 'right'
         },
-        checked: {
-            type: Boolean,
-            value: false
-        },
-        disabled: {
-            type: Boolean,
-            value: false
-        },
-        color: {
+        labelDisabled: Boolean,
+        shape: {
             type: String,
-            value: '#2d8cf0'
+            value: 'round'
         },
-        position: {
-            type: String,
-            value: 'left', //left right
-            observer: 'setPosition'
+        iconSize: {
+            type: null,
+            observer: 'setIconSizeUnit'
         }
     },
     data: {
-        checked: true,
-        positionCls: `${prefixCls}-radio-left`,
-    },
-    attached() {
-        this.setPosition();
+        iconSizeWithUnit: '20px'
     },
     methods: {
-        changeCurrent(current) {
-            this.setData({ checked: current });
-        },
-        radioChange() {
-            if (this.data.disabled) return;
-            const item = { current: !this.data.checked, value: this.data.value };
-            const parent = this.getRelationNodes('../radio-group/index')[0];
-            parent ? parent.emitEvent(item) : this.triggerEvent('change', item);
-        },
-        setPosition() {
+        setIconSizeUnit(val) {
             this.setData({
-                positionCls: this.data.position.indexOf('left') !== -1 ? `${prefixCls}-radio-left` : `${prefixCls}-radio-right`,
+                iconSizeWithUnit: addUnit(val)
             });
+        },
+        emitChange(value) {
+            const instance = this.parent || this;
+            instance.$emit('input', value);
+            instance.$emit('change', value);
+        },
+        onChange(event) {
+            console.log(event);
+            this.emitChange(this.data.name);
+        },
+        onClickLabel() {
+            const { disabled, labelDisabled, name } = this.data;
+            if (!disabled && !labelDisabled) {
+                this.emitChange(name);
+            }
         }
     }
 });

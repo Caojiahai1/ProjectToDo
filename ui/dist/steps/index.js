@@ -1,50 +1,22 @@
-Component({
-    externalClasses: ['i-class'],
-    properties : {
-        current : {
-            type : Number,
-            value : -1,
-            observer : '_updateDataChange'
+import { VantComponent } from '../common/component';
+import { GREEN } from '../common/color';
+VantComponent({
+    props: {
+        icon: String,
+        steps: Array,
+        active: Number,
+        direction: {
+            type: String,
+            value: 'horizontal'
         },
-        status : {
-            type : String,
-            //wait、process、finish、error
-            value : ''
+        activeColor: {
+            type: String,
+            value: GREEN
         },
-        direction : {
-            type : String,
-            //value has horizontal or vertical 
-            value : 'horizontal'
-        } 
-    },
-    relations : {
-        '../step/index' : {
-            type : 'child',
-            linked(){
-                this._updateDataChange();
-            },
-            linkChanged () {
-                this._updateDataChange();
-            },
-            unlinked () {
-                this._updateDataChange();
-            }
-        }
-    },
-    methods: {
-        _updateDataChange() {
-            let steps = this.getRelationNodes('../step/index');
-            const len = steps.length;
-            if (len > 0) {
-                steps.forEach((step, index) => {
-                    step.updateDataChange({
-                        len : len,
-                        index : index,
-                        current : this.data.current,
-                        direction : this.data.direction
-                    });
-                });
-            }
-        }
+        activeIcon: {
+            type: String,
+            value: 'checked'
+        },
+        inactiveIcon: String
     }
-})
+});

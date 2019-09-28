@@ -1,7 +1,3 @@
 {
-    "component": true,
-    "usingComponents":
-    {
-        "i-cell-group": "../cell-group/index"
-    }
+  "component": true
 }

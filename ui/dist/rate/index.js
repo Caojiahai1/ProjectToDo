@@ -1,69 +1,98 @@
-Component({
-    externalClasses: ['i-class'],
-    properties : {
-        count : {
-            type : Number,
-            value : 5
+import { VantComponent } from '../common/component';
+import { addUnit } from '../common/utils';
+VantComponent({
+    field: true,
+    classes: ['icon-class'],
+    props: {
+        value: Number,
+        readonly: Boolean,
+        disabled: Boolean,
+        allowHalf: Boolean,
+        size: {
+            type: null,
+            observer: 'setSizeWithUnit'
         },
-        value : {
-            type : Number,
-            value : 0
+        icon: {
+            type: String,
+            value: 'star'
         },
-        disabled : {
-            type : Boolean,
-            value : false
+        voidIcon: {
+            type: String,
+            value: 'star-o'
         },
-        size : {
-            type : Number,
-            value : 20
+        color: {
+            type: String,
+            value: '#ffd21e'
         },
-        name : {
-            type : String,
-            value : ''
+        voidColor: {
+            type: String,
+            value: '#c7c7c7'
+        },
+        disabledColor: {
+            type: String,
+            value: '#bdbdbd'
+        },
+        count: {
+            type: Number,
+            value: 5
+        },
+        gutter: {
+            type: null,
+            observer: 'setGutterWithUnit'
+        },
+        touchable: {
+            type: Boolean,
+            value: true
         }
     },
-    data : {
-        touchesStart : {
-            pageX : 0
+    data: {
+        innerValue: 0,
+        gutterWithUnit: undefined,
+        sizeWithUnit: '20px'
+    },
+    watch: {
+        value(value) {
+            if (value !== this.data.innerValue) {
+                this.setData({ innerValue: value });
+            }
         }
     },
-    methods : {
-        handleClick(e){
-            const data = this.data;
-            if( data.disabled ){
-                return;
-            }
-            const index = e.currentTarget.dataset.index;
-            this.triggerEvent('change',{
-                index : index + 1
-            })
+    methods: {
+        setSizeWithUnit(val) {
+            this.setData({
+                sizeWithUnit: addUnit(val)
+            });
         },
-        handleTouchMove(e){
-            const data = this.data;
-            if( data.disabled ){
-                return;
+        setGutterWithUnit(val) {
+            this.setData({
+                gutterWithUnit: addUnit(val)
+            });
+        },
+        onSelect(event) {
+            const { data } = this;
+            const { score } = event.currentTarget.dataset;
+            if (!data.disabled && !data.readonly) {
+                this.setData({ innerValue: score + 1 });
+                this.$emit('input', score + 1);
+                this.$emit('change', score + 1);
             }
-            if( !e.changedTouches[0] ){
+        },
+        onTouchMove(event) {
+            const { touchable } = this.data;
+            if (!touchable)
                 return;
-            }
-            const movePageX =  e.changedTouches[0].pageX;
-            const space = movePageX - data.touchesStart.pageX;
-
-            if( space <= 0 ){
-                return;
-            }
-            let setIndex = Math.ceil( space/data.size );
-            setIndex = setIndex  > data.count ? data.count : setIndex ;
-            this.triggerEvent('change',{
-                index : setIndex 
-            })
+            const { clientX, clientY } = event.touches[0];
+            this.getRect('.van-rate__icon', true).then((list) => {
+                const target = list
+                    .sort(item => item.right - item.left)
+                    .find(item => clientX >= item.left &&
+                    clientX <= item.right &&
+                    clientY >= item.top &&
+                    clientY <= item.bottom);
+                if (target != null) {
+                    this.onSelect(Object.assign(Object.assign({}, event), { currentTarget: target }));
+                }
+            });
         }
-    },
-    ready(){
-       const className = '.i-rate';
-        var query = wx.createSelectorQuery().in(this)
-        query.select( className ).boundingClientRect((res)=>{
-            this.data.touchesStart.pageX = res.left || 0;
-        }).exec()
     }
 });

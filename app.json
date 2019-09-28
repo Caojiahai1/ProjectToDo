@@ -9,5 +9,27 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "custom": true,
+    "color": "#6e6d6b",
+    "selectedColor": "#6e6d6b",
+    "borderStyle": "white",
+    "backgroundColor": "#afdfe4",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/index/index"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+
+  }
 }

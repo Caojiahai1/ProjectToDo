@@ -1,22 +1,39 @@
-Component({
-    externalClasses: ['i-class'],
-
-    properties: {
-        type: {
-            type: String,
-            value: ''
-        },
-        custom: {
-            type: String,
-            value: ''
-        },
+import { VantComponent } from '../common/component';
+import { addUnit } from '../common/utils';
+VantComponent({
+    props: {
+        dot: Boolean,
+        info: null,
         size: {
-            type: Number,
-            value: 14
+            type: null,
+            observer: 'setSizeWithUnit'
         },
-        color: {
+        color: String,
+        customStyle: String,
+        classPrefix: {
             type: String,
-            value: ''
+            value: 'van-icon'
+        },
+        name: {
+            type: String,
+            observer(val) {
+                this.setData({
+                    isImageName: val.indexOf('/') !== -1
+                });
+            }
+        }
+    },
+    data: {
+        sizeWithUnit: null,
+    },
+    methods: {
+        onClick() {
+            this.$emit('click');
+        },
+        setSizeWithUnit(size) {
+            this.setData({
+                sizeWithUnit: addUnit(size)
+            });
         }
     }
 });
