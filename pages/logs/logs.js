@@ -11,5 +11,13 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
-  }
+  },
+  onShow: function () {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        active: 2
+      })
+    }
+  },
 })

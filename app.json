@@ -1,8 +1,4 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -11,23 +7,26 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#6e6d6b",
-    "selectedColor": "#6e6d6b",
-    "borderStyle": "white",
-    "backgroundColor": "#afdfe4",
-    "box-shadow": "0 0 6px 0",
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/index/index"
       },
       {
-        "pagePath": "pages/index/index"
+        "pagePath": "pages/setting/setting"
       },
       {
-        "pagePath": "pages/index/index"
+        "pagePath": "pages/logs/logs"
       }
     ]
   },
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/setting/setting"
+  ],
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
 

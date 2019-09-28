@@ -10,7 +10,12 @@ Component({
       {
         icon: 'search',
         text: '示例2',
-        url: '/pages/index/index'
+        url: '/pages/setting/setting'
+      },
+      {
+        icon: 'search',
+        text: '示例3',
+        url: '/pages/logs/logs'
       }
     ]
   },
