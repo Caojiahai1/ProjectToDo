@@ -1,6 +1,49 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
+<view>
+  <view class="field-class">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+      <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+  </view>
+  <van-divider contentPosition="left">任务列表</van-divider>
+  <!-- <van-grid column-num="1" border="{{ true }}">
+    <van-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
+      <van-row gutter="20">
+        <van-col span="2"><van-icon name="passed" /></van-col>
+        <van-col span="16">task</van-col>
+        <van-col span="6"><van-circle
+          value="{{ 30 }}"
+          layer-color="#eeeeee"
+          color="#ee0a24"
+          text="30%"
+          size="50"/></van-col>
+      </van-row>
+    </van-grid-item>
+  </van-grid> -->
+  <van-row gutter="20">
+    <van-col span="2"><van-icon class="leftCircle" name="passed" /></van-col>
+    <van-col span="16">task</van-col>
+    <van-col span="6"><van-circle
+      value="{{ 30 }}"
+      layer-color="#eeeeee"
+      color="#ee0a24"
+      text="30%"
+      size="50"/></van-col>
+  </van-row>
+  <van-row gutter="20">
+    <van-col span="2"><van-icon class="leftCircle" name="circle" /></van-col>
+    <van-col span="16">task</van-col>
+    <van-col span="6"><van-circle
+      value="{{ 30 }}"
+      layer-color="#eeeeee"
+      color="#ee0a24"
+      text="30%"
+      size="50"/></van-col>
+  </van-row>
+  <van-icon class="addTask" name="add" size="50" />
+
+  
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -9,5 +52,5 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-  </view>
+  </view> -->
 </view>

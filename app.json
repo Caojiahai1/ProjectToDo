@@ -8,17 +8,14 @@
   "tabBar": {
     "custom": true,
     "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
+    "selectedColor": "#234678",
+    "backgroundColor": "#234678",
     "list": [
       {
         "pagePath": "pages/index/index"
       },
       {
         "pagePath": "pages/setting/setting"
-      },
-      {
-        "pagePath": "pages/logs/logs"
       }
     ]
   },
@@ -29,6 +26,13 @@
   ],
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-
+    "van-search": "ui/dist/search/index",
+    "van-divider": "ui/dist/divider/index",
+    "van-grid": "ui/dist/grid/index",
+    "van-grid-item": "ui/dist/grid-item/index",
+    "van-icon": "ui/dist/icon/index",
+    "van-row": "ui/dist/row/index",
+    "van-col": "ui/dist/col/index",
+    "van-circle": "ui/dist/circle/index"
   }
 }

@@ -3,19 +3,14 @@ Component({
     active: 0,
     list: [
       {
-        icon: 'home-o',
-        text: '示例1',
+        icon: 'todo-list',
+        text: 'task',
         url: '/pages/index/index'
       },
       {
-        icon: 'search',
-        text: '示例2',
+        icon: 'manager',
+        text: '个人中心',
         url: '/pages/setting/setting'
-      },
-      {
-        icon: 'search',
-        text: '示例3',
-        url: '/pages/logs/logs'
       }
     ]
   },

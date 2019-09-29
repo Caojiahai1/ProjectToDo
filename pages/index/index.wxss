@@ -19,3 +19,14 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.addTask {
+  position: fixed;
+  margin-right: 10rpx;
+  color: #166CE3;
+  bottom: 120rpx;
+  right: 30rpx
+}
+.leftCircle {
+  padding-left: 10rpx;
+}
