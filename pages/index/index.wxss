@@ -34,6 +34,7 @@
   font-size: 50px;
   text-align: center;
   line-height: 40px;
+  z-index: 99999;
 }
 .addTaskInput {
   position: fixed;
@@ -51,20 +52,24 @@
   width: 100%;
   display: block;
   margin: 0;
+  z-index: 99999;
 }
 .rowBorder {
   /* border-color: rgb(179, 180, 179);
   border-width: thin;
   border-style: solid; */
   border-bottom: solid thin #aaa;
+  margin: 0px 5px 0px 0px;
   
   /* background-color: rgb(189, 191, 194) */
 }
 .vancol1{
+  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: center;
   height: 55px;
+  /* z-index: 99999; */
   /* margin: 0px; */
   /* padding: 0px; */
 }
