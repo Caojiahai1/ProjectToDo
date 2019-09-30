@@ -7,7 +7,12 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    marginTop: '',
+    array: [
+      {text: "11111",date: "2019/09/29"},
+      { text: "22222", date: "2019/09/30" }
+    ]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +21,17 @@ Page({
     })
   },
   onLoad: function () {
+    var query = wx.createSelectorQuery();
+    //选择id
+    var that = this;
+    query.select('.topFixedView').boundingClientRect(function (rect) {
+      // console.log(rect.height)
+      that.setData({
+        marginTop: rect.height + 'px'
+      })
+    }).exec();
+
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

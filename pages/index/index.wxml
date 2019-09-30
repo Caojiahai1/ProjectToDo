@@ -1,11 +1,14 @@
 <!--index.wxml-->
 <view>
-  <view class="field-class">
-    <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+  <view class="topFixedView"  >
+    <van-search background="#6491CB" value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
       <view slot="action" bind:tap="onSearch">搜索</view>
     </van-search>
   </view>
-  <van-divider contentPosition="left">任务列表</van-divider>
+  <view style="margin-top:{{marginTop}}">
+    <van-divider contentPosition="left">任务列表</van-divider>
+  </view>
+  
   <!-- <van-grid column-num="1" border="{{ true }}">
     <van-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
       <van-row gutter="20">
@@ -20,25 +23,16 @@
       </van-row>
     </van-grid-item>
   </van-grid> -->
-  <van-row gutter="20">
-    <van-col span="2"><van-icon class="leftCircle" name="passed" /></van-col>
-    <van-col span="16">task</van-col>
-    <van-col span="6"><van-circle
+  <van-row wx:for="{{ array }}" custom-class="rowBorder" gutter="0">
+    <van-col custom-class="vancol1" span="2"><van-icon name="passed" /></van-col>
+    <van-col custom-class="vancol2" span="16"><text>{{item.text}}\n{{item.date}}</text></van-col>
+    <van-col custom-class="vancol1" span="6">
+    <view style="height:50px"><van-circle
       value="{{ 30 }}"
       layer-color="#eeeeee"
       color="#ee0a24"
       text="30%"
-      size="50"/></van-col>
-  </van-row>
-  <van-row gutter="20">
-    <van-col span="2"><van-icon class="leftCircle" name="circle" /></van-col>
-    <van-col span="16">task</van-col>
-    <van-col span="6"><van-circle
-      value="{{ 30 }}"
-      layer-color="#eeeeee"
-      color="#ee0a24"
-      text="30%"
-      size="50"/></van-col>
+      size="50"/></view></van-col>
   </van-row>
   <van-icon class="addTask" name="add" size="50" />
 

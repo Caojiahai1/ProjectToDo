@@ -24,9 +24,40 @@
   position: fixed;
   margin-right: 10rpx;
   color: #166CE3;
-  bottom: 120rpx;
-  right: 30rpx
+  bottom: 8%;
+  right: 2%;
 }
 .leftCircle {
-  padding-left: 10rpx;
+  padding-left: 20rpx;
+  padding-top: 15px;
+}
+.topFixedView {
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+.rowBorder {
+  /* border-color: rgb(179, 180, 179);
+  border-width: thin;
+  border-style: solid; */
+  border-bottom: solid thin #aaa;
+  
+  /* background-color: rgb(189, 191, 194) */
+}
+.vancol1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  /* margin: 0px; */
+  /* padding: 0px; */
+}
+.vancol2{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 55px;
+  /* margin: 0px; */
 }
