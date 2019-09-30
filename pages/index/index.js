@@ -12,7 +12,18 @@ Page({
     array: [
       {text: "11111",date: "2019/09/29"},
       { text: "22222", date: "2019/09/30" }
-    ]
+    ],
+    taskBgColor: '#6491CB',
+  },
+  addTask: function() {
+    this.setData({
+      taskBgColor: '#234678'
+    })
+  },
+  moveTask: function () {
+    this.setData({
+      taskBgColor: '#6491CB'
+    })
   },
   //事件处理函数
   bindViewTap: function() {

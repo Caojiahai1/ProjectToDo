@@ -33,6 +33,8 @@
     "van-icon": "ui/dist/icon/index",
     "van-row": "ui/dist/row/index",
     "van-col": "ui/dist/col/index",
-    "van-circle": "ui/dist/circle/index"
+    "van-circle": "ui/dist/circle/index",
+    "van-field": "ui/dist/field/index",
+    "van-button": "ui/dist/button/index"
   }
 }

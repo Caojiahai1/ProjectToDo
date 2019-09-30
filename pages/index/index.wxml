@@ -34,7 +34,18 @@
       text="30%"
       size="50"/></view></van-col>
   </van-row>
-  <van-icon class="addTask" name="add" size="50" />
+  <!-- <van-icon class="addTask" name="add" bindtap="addTask" size="50" /> -->
+  <!-- <van-button class="addTask" custom-style="border-radius=20px" round="true" type="primary" size="mini">+</van-button> -->
+  <view class="addTask" style="background-color:{{taskBgColor}}"
+   bindtouchstart="addTask" bindtouchend="moveTask">+</view>
+  <van-cell-group>
+  <van-field class="addTaskInput"
+    value="{{ value }}"
+    placeholder="请输入用户名"
+    border="{{ false }}"
+    bind:change="onChange"
+  />
+  </van-cell-group>
 
   
   <!-- <view class="userinfo">
