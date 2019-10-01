@@ -1,10 +1,11 @@
 <!--index.wxml-->
 <view>
   <view class="topFixedView"  >
-    <van-search background="#6491CB" value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+    <van-search background="#6491CB" value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch" shape="round">
       <view slot="action" bind:tap="onSearch">搜索</view>
     </van-search>
   </view>
+  <!-- <scroll-view class="topFixedView" style="height:54px"></scroll-view> -->
   <view style="margin-top:{{marginTop}}">
     <van-divider contentPosition="left">任务列表</van-divider>
   </view>
@@ -26,13 +27,42 @@
   <!-- <van-button class="addTask" custom-style="border-radius=20px" round="true" type="primary" size="mini">+</van-button> -->
   <cover-view class="addTask" style="background-color:{{taskBgColor}}"
    bindtouchstart="addTask" bindtouchend="moveTask">+</cover-view>
-  <!-- <van-cell-group>
-  <van-field class="addTaskInput"
-    value="{{ value }}"
-    placeholder="请输入用户名"
-    border="{{ false }}"
-    bind:change="onChange"
-  />
+  <!-- <view>
+    <input class="weui-input addTaskInput" adjust-position="{{false}}" placeholder="输入"/>
+  </view> -->
+  <van-cell-group class="addTaskInput"
+  style='bottom:{{inputBottom}}px;display:{{inputDisplay}};' >
+  <van-field
+    custom-style="background-color: #6491CB;padding:8px 5px"
+    value="{{ sms }}"
+    center
+    clearable
+    placeholder="请输入"
+    adjust-position= "{{false}}"
+    bindfocus="inputFocus"
+    bindblur="inputblur"
+    focus="{{inputShowed}}"
+    use-button-slot
+  >
+    <van-button slot="button" size="small" type="primary" custom-style="background-color:#234678;border:0px">保存</van-button>
+  </van-field>
+</van-cell-group>
+  <!-- <van-cell-group class="addTaskInput">
+    <van-field 
+      style='bottom:{{inputBottom}}px;display:{{inputDisplay}};'
+      
+      value="{{ value }}"
+      placeholder="请输入用户名"
+      border="{{ true }}"
+      bind:change="onChange"
+      adjust-position= "{{false}}"
+      bindfocus="inputFocus"
+      bindblur="inputblur"
+      focus="{{inputShowed}}"
+      right-icon="add"
+      use-button-slot
+    />
+    <van-button slot="button" size="small" type="primary">发送验证码</van-button>
   </van-cell-group> -->
 
   

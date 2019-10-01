@@ -16,18 +16,23 @@ Page({
       { text: "22222", date: "2019/09/30" },
       { text: "11111", date: "2019/09/29" },
       { text: "22222", date: "2019/09/30" },
-      { text: "11111", date: "2019/09/29" },
-      { text: "22222", date: "2019/09/30" },
-      { text: "11111", date: "2019/09/29" },
-      { text: "22222", date: "2019/09/30" },
-      { text: "11111", date: "2019/09/29" },
-      { text: "22222", date: "2019/09/30" },
+      // { text: "11111", date: "2019/09/29" },
+      // { text: "22222", date: "2019/09/30" },
+      // { text: "11111", date: "2019/09/29" },
+      // { text: "22222", date: "2019/09/30" },
+      // { text: "11111", date: "2019/09/29" },
+      // { text: "22222", date: "2019/09/30" },
     ],
     taskBgColor: '#6491CB',
+    inputBottom: 0,
+    inputDisplay: "none",
+    inputShowed: "false"
   },
   addTask: function() {
     this.setData({
-      taskBgColor: '#234678'
+      taskBgColor: '#234678',
+      inputDisplay: 'block',
+      inputShowed: "true"
     })
   },
   moveTask: function () {
@@ -35,8 +40,25 @@ Page({
       taskBgColor: '#6491CB'
     })
   },
+  // 输入框聚焦
+  inputFocus: function (e) {
+    var that = this;
+    if (that.data.inputBottom == 0) {
+      that.setData({
+        inputBottom: e.detail.height
+        // inputBottom:100
+      })
+    }
+  },
+  inputblur: function() {
+    var that = this;
+    that.setData({
+      inputDisplay: 'none',
+      // inputBottom: 60
+    })
+  },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
