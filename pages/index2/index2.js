@@ -6,10 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    buttonButtom: 0,
-    buttonRight: 0,
+    buttonTop: 0,
+    buttonLeft: 0,
     windowHeight: '',
-    windowWidth: ''
+    windowWidth: '',
+    startPoint:''
   },
 
   /**
@@ -82,14 +83,17 @@ Page({
   },
 
   buttonStart: function (e) {
-    startPoint = e.touches[0]
+    // var startPoint = e.touches[0]
+    this.setData({
+      startPoint:e.touches[0]
+    });
   },
 
   buttonMove: function (e) {
     var endPoint = e.touches[e.touches.length - 1]
-    var translateX = endPoint.clientX - startPoint.clientX
-    var translateY = endPoint.clientY - startPoint.clientY
-    startPoint = endPoint
+    var translateX = endPoint.clientX - this.data.startPoint.clientX
+    var translateY = endPoint.clientY - this.data.startPoint.clientY
+    this.data.startPoint = endPoint
     var buttonTop = this.data.buttonTop + translateY
     var buttonLeft = this.data.buttonLeft + translateX
     //判断是移动否超出屏幕
@@ -117,10 +121,10 @@ Page({
     //   title: '走你',
     // })
   },
-  // clicks: function () {
-  //   wx.showToast({
-  //     title: '走你',
-  //   })
-  // }
+  clicks: function () {
+    wx.showToast({
+      title: '走你',
+    })
+  }
 
 })
