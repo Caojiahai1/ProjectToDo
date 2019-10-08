@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   font-size: 30rpx;
+  z-index: 99999;
 }
 
 .addButton::after {

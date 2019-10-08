@@ -1,6 +1,7 @@
 <!--pages/index2/index2.wxml-->
 <!-- <text>pages/index2/index2.wxml</text> -->
-<view class="topSearchBar">
+<view>
+  <view class="topSearchBar">
     <!-- <view class="page__bd"> -->
         <!-- <view class="sub-title">Normal</view> -->
         <wux-search-bar clear maxlength="8" />
@@ -27,4 +28,5 @@
   <button class = "addButton" bindtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd" bindtap="clicks"     style="top:{{buttonTop}}px;left:{{buttonLeft}}px;width: 100rpx;height:100rpx;border-radius:50%;position:fixed;padding:0;">
     <image class="addIcon" src='../../img/add_icon2.png' style="height:100%;width:100%;"></image>
   </button>
+</view>
 </view>
