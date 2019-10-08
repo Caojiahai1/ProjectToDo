@@ -26,15 +26,15 @@
   ],
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-search": "ui/dist/search/index",
-    "van-divider": "ui/dist/divider/index",
-    "van-grid": "ui/dist/grid/index",
-    "van-grid-item": "ui/dist/grid-item/index",
-    "van-icon": "ui/dist/icon/index",
-    "van-row": "ui/dist/row/index",
-    "van-col": "ui/dist/col/index",
-    "van-circle": "ui/dist/circle/index",
-    "van-field": "ui/dist/field/index",
-    "van-button": "ui/dist/button/index"
+    "van-search": "ui/vant/dist/search/index",
+    "van-divider": "ui/vant/dist/divider/index",
+    "van-grid": "ui/vant/dist/grid/index",
+    "van-grid-item": "ui/vant/dist/grid-item/index",
+    "van-icon": "ui/vant/dist/icon/index",
+    "van-row": "ui/vant/dist/row/index",
+    "van-col": "ui/vant/dist/col/index",
+    "van-circle": "ui/vant/dist/circle/index",
+    "van-field": "ui/vant/dist/field/index",
+    "van-button": "ui/vant/dist/button/index"
   }
 }
