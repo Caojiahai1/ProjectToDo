@@ -20,9 +20,11 @@
     ]
   },
   "pages": [
+    "pages/index2/index2",
     "pages/index/index",
     "pages/logs/logs",
     "pages/setting/setting"
+    
   ],
   "sitemapLocation": "sitemap.json",
   "usingComponents": {

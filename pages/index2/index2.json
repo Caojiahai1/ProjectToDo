@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"index2_task",
+  "usingComponents": {
+    "wux-search-bar": "../../ui/wux/dist/search-bar/index"
+  }
+}
