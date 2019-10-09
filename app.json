@@ -5,39 +5,19 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "tabBar": {
-    "custom": true,
-    "color": "#000000",
-    "selectedColor": "#234678",
-    "backgroundColor": "#234678",
-    "list": [
-      {
-        "pagePath": "pages/index/index"
-      },
-      {
-        "pagePath": "pages/setting/setting"
-      }
-    ]
-  },
   "pages": [
-    "pages/home/home",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/setting/setting",
-    "pages/index2/index2"
-    
+    "pages/index/index"
   ],
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-search": "ui/vant/dist/search/index",
-    "van-divider": "ui/vant/dist/divider/index",
-    "van-grid": "ui/vant/dist/grid/index",
-    "van-grid-item": "ui/vant/dist/grid-item/index",
-    "van-icon": "ui/vant/dist/icon/index",
-    "van-row": "ui/vant/dist/row/index",
-    "van-col": "ui/vant/dist/col/index",
-    "van-circle": "ui/vant/dist/circle/index",
-    "van-field": "ui/vant/dist/field/index",
-    "van-button": "ui/vant/dist/button/index"
+    "wux-row": "ui/wux/dist/row/index",
+    "wux-col": "ui/wux/dist/col/index",
+    "wux-divider": "ui/wux/dist/divider/index",
+    "wux-search-bar": "ui/wux/dist/search-bar/index",
+    "wux-cell-group": "ui/wux/dist/cell-group/index",
+    "wux-cell": "ui/wux/dist/cell/index",
+    "wux-textarea": "ui/wux/dist/textarea/index",
+    "wux-fab-button": "ui/wux/dist/fab-button/index",
+    "wux-icon": "ui/wux/dist/icon/index"
   }
 }

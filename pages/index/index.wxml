@@ -1,36 +1,41 @@
 <!--index.wxml-->
 <view>
+  <!-- 顶部搜索框 -->
   <view class="topFixedView"  >
-    <van-search background="#6491CB" value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch" shape="round">
-      <view slot="action" bind:tap="onSearch">搜索</view>
-    </van-search>
+    <wux-search-bar clear show-cancel placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
   </view>
   <!-- <scroll-view class="topFixedView" style="height:54px"></scroll-view> -->
-  <view style="margin-top:{{marginTop}}">
-    <van-divider contentPosition="left">任务列表</van-divider>
-  </view>
-  <!-- <view style="height:200px;"> -->
-    <van-row wx:for="{{ array }}" custom-class="rowBorder" gutter="0">
-      <van-col custom-class="vancol1" span="2"><van-icon name="passed" /></van-col>
-      <van-col custom-class="vancol2" span="16"><text>{{item.text}}\n{{item.date}}</text></van-col>
-      <van-col custom-class="vancol1" span="6">
-      <view style="height:50px"><van-circle
-        value="{{ 30 }}"
-        layer-color="#eeeeee"
-        color="#ee0a24"
-        text="30%"
-        size="50"/></view></van-col>
-    </van-row>
-  <!-- </view> -->
-  
-  <!-- <van-icon class="addTask" name="add" bindtap="addTask" size="50" /> -->
-  <!-- <van-button class="addTask" custom-style="border-radius=20px" round="true" type="primary" size="mini">+</van-button> -->
-  <cover-view class="addTask" style="background-color:{{taskBgColor}}"
-   bindtouchstart="addTask" bindtouchend="moveTask">+</cover-view>
-  <!-- <view>
-    <input class="weui-input addTaskInput" adjust-position="{{false}}" placeholder="输入"/>
+  <!-- <view style="margin-top:{{marginTop}}">
+    <wux-divider position="left" text='任务列表'/>
   </view> -->
-  <van-cell-group class="addTaskInput"
+  <!-- 任务列表显示 -->
+  <view style="margin-top:{{marginTop}}">
+    <wux-row wx:for="{{ taskList }}" wux-class="taskStyle" gutter="0">
+      <wux-col wux-class="taskList1" span="2"><wux-icon type="ios-checkbox-outline" size="20" /></wux-col>
+      <wux-col wux-class="taskList2" span="10"><text>{{item.text}}\n{{item.date}}</text></wux-col>
+    </wux-row>
+  </view>
+
+  <wux-fab-button class="fab-button" theme="positive" direction = "vertical" buttons="{{buttons}}" />
+
+  <!-- <cover-view class="addTask" style="background-color:{{taskBgColor}}"
+   bindtouchstart="addTask" bindtouchend="moveTask">+</cover-view> -->
+
+  <wux-cell-group class="addTaskInput" style='bottom:{{inputBottom}}px;display:{{inputDisplay}};'>
+    <wux-cell hover-class="none">
+        <wux-textarea
+          center
+          clearable
+          placeholder="请输入"
+          adjust-position= "{{false}}"
+          bindfocus="inputFocus"
+          bindblur="inputblur"
+          focus="{{inputShowed}}" />
+    </wux-cell>
+  </wux-cell-group>
+  <!-- <button bindtap="addTask">111</button> -->
+
+  <!-- <van-cell-group class="addTaskInput"
   style='bottom:{{inputBottom}}px;display:{{inputDisplay}};' >
   <van-field
     custom-style="background-color: #6491CB;padding:8px 5px"
@@ -46,34 +51,6 @@
   >
     <van-button slot="button" size="small" type="primary" custom-style="background-color:#234678;border:0px">保存</van-button>
   </van-field>
-</van-cell-group>
-  <!-- <van-cell-group class="addTaskInput">
-    <van-field 
-      style='bottom:{{inputBottom}}px;display:{{inputDisplay}};'
-      
-      value="{{ value }}"
-      placeholder="请输入用户名"
-      border="{{ true }}"
-      bind:change="onChange"
-      adjust-position= "{{false}}"
-      bindfocus="inputFocus"
-      bindblur="inputblur"
-      focus="{{inputShowed}}"
-      right-icon="add"
-      use-button-slot
-    />
-    <van-button slot="button" size="small" type="primary">发送验证码</van-button>
-  </van-cell-group> -->
-
+</van-cell-group> -->
   
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
 </view>

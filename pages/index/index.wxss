@@ -1,26 +1,5 @@
 /**index.wxss**/
 
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
 .addTask {
   position: fixed;
   color: white;
@@ -39,17 +18,15 @@
 }
 .addTaskInput {
   position: fixed;
-  /* margin-right: 10rpx; */
-  /* color: #166CE3; */
-  /* bottom: 12%; */
   width: 100%;
-  /* left: 1%; */
-  /* border: solid 1px #6491CB; */
 }
-.leftCircle {
+
+/* .leftCircle {
   padding-left: 20rpx;
   padding-top: 15px;
-}
+} */
+
+/* 顶部搜索框样式，固定在顶部 */
 .topFixedView {
   position: fixed;
   top: 0rpx;
@@ -58,37 +35,29 @@
   margin: 0;
   z-index: 99999;
 }
-.rowBorder {
-  /* border-color: rgb(179, 180, 179);
-  border-width: thin;
-  border-style: solid; */
-  /* border-bottom: solid thin #aaa; */
+
+/* 任务样式 */
+.taskStyle {
   margin: 3px 5px;
   background-color: #fff;
   border-radius: 10px;
-  /* width: 96%;
-  left: 2%; */
-  
-  /* background-color: rgb(189, 191, 194) */
 }
-.vancol1{
-  /* position: relative; */
+/* 任务列表第一列 */
+.taskList1{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 55px;
-  /* z-index: 99999; */
-  /* margin: 0px; */
-  /* padding: 0px; */
 }
-.vancol2{
+/* 任务列表内容 */
+.taskList2{
   display: flex;
   align-items: center;
   /* justify-content: center; */
   height: 55px;
   /* margin: 0px; */
 }
-
+/* 页面背景色 */
 page {
   background-color: rgb(243, 240, 240)
 }
