@@ -37,9 +37,8 @@
   z-index: 99999;
 }
 
-
 .toolBar{
-  background-color: rgb(224, 221, 221);
+  background-color: rgb(240, 236, 236);
   border-top: solid 0.5px rgb(219, 218, 218);
 }
 .toolBarButton{

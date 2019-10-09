@@ -33,7 +33,7 @@ Page({
       { text: "11111", date: "2019/09/29", icon: "md-checkbox-outline" },
       { text: "22222", date: "2019/09/30", icon: "md-square-outline" }
     ],
-    taskBgColor: '#6491CB',
+    // taskBgColor: '#6491CB',
     inputBottom: 0,
     inputDisplay: "none",
     inputShowed: false
