@@ -186,6 +186,11 @@ var defaultAction = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAA
           buttons: this.data.buttons
         };
       n.disabled || (this.triggerEvent("click", o), this.onChange(!1))
+      if (a == 0) {
+        var pages = getCurrentPages()    //获取加载的页面
+        var currentPage = pages[pages.length - 1]    //获取当前页面的对象
+        currentPage.addTask();
+      }
     },
     getRect: function(t, a) {
       var n = this;

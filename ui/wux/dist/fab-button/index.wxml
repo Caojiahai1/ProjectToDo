@@ -31,7 +31,8 @@
 		    catchtap="onTap"
 			style="{{ buttonStyle[index] }}"
 		>
-			<image class="{{ classes.icon }}" src="{{ button.icon }}" />
+			<!-- <image class="{{ classes.icon }}" src="{{ button.icon }}" /> -->
+      <wux-icon type="{{button.iconType}}" />
 			<view class="{{ classes.label }}" wx:if="{{ button.label }}">{{ button.label }}</view>
 		</button>
 	</block>

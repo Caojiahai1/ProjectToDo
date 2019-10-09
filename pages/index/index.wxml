@@ -11,46 +11,33 @@
   <!-- 任务列表显示 -->
   <view style="margin-top:{{marginTop}}">
     <wux-row wx:for="{{ taskList }}" wux-class="taskStyle" gutter="0">
-      <wux-col wux-class="taskList1" span="2"><wux-icon type="ios-checkbox-outline" size="20" /></wux-col>
+      <wux-col wux-class="taskList1" span="2"><wux-icon type="{{item.icon}}" size="20" /></wux-col>
       <wux-col wux-class="taskList2" span="10"><text>{{item.text}}\n{{item.date}}</text></wux-col>
     </wux-row>
   </view>
 
-  <wux-fab-button class="fab-button" theme="positive" direction = "vertical" buttons="{{buttons}}" />
+  <wux-fab-button class="fab-button" position="bottomRight" theme="positive" direction = "vertical" buttons="{{buttons}}" />
 
   <!-- <cover-view class="addTask" style="background-color:{{taskBgColor}}"
    bindtouchstart="addTask" bindtouchend="moveTask">+</cover-view> -->
 
   <wux-cell-group class="addTaskInput" style='bottom:{{inputBottom}}px;display:{{inputDisplay}};'>
-    <wux-cell hover-class="none">
-        <wux-textarea
-          center
-          clearable
+    <wux-cell>
+        <wux-input
           placeholder="请输入"
           adjust-position= "{{false}}"
           bindfocus="inputFocus"
           bindblur="inputblur"
-          focus="{{inputShowed}}" />
+          focus="{{inputShowed}}" >
+          <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="20" color="#6491CB"/></view>
+          </wux-input>
     </wux-cell>
+    <view>
+      <wux-row  wux-class="toolBar" gutter="0">
+        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" size="30" /></wux-col>
+        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" size="30" /></wux-col>
+      </wux-row>
+    </view>
   </wux-cell-group>
-  <!-- <button bindtap="addTask">111</button> -->
-
-  <!-- <van-cell-group class="addTaskInput"
-  style='bottom:{{inputBottom}}px;display:{{inputDisplay}};' >
-  <van-field
-    custom-style="background-color: #6491CB;padding:8px 5px"
-    value="{{ sms }}"
-    center
-    clearable
-    placeholder="请输入"
-    adjust-position= "{{false}}"
-    bindfocus="inputFocus"
-    bindblur="inputblur"
-    focus="{{inputShowed}}"
-    use-button-slot
-  >
-    <van-button slot="button" size="small" type="primary" custom-style="background-color:#234678;border:0px">保存</van-button>
-  </van-field>
-</van-cell-group> -->
   
 </view>
