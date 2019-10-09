@@ -20,10 +20,11 @@
     ]
   },
   "pages": [
-    "pages/index2/index2",
+    "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/index2/index2"
     
   ],
   "sitemapLocation": "sitemap.json",

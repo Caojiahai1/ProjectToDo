@@ -103,8 +103,8 @@ Page({
     if (buttonLeft <= 0) {
       buttonLeft = 0;
     }
-    if (buttonTop <= 0) {
-      buttonTop = 0
+    if (buttonTop <= 50) {
+      buttonTop = 50
     }
     if (buttonTop + 50 >= this.data.windowHeight) {
       buttonTop = this.data.windowHeight - 50;
