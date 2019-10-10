@@ -128,6 +128,10 @@ var defaultEvents = {
       type: Boolean,
       value: !0
     },
+    holdKeyboard: {
+      type: Boolean,
+      value: !0
+    },
     clear: {
       type: Boolean,
       value: !1

@@ -1,3 +1,5 @@
+var themeUtil = require('../../utils/theme.js')
+
 //获取应用实例1
 const app = getApp()
 const buttons = [
@@ -15,6 +17,10 @@ const buttons = [
 Page({
   // 页面初始化数据
   data: {
+    // 主题
+    theme : {
+
+    },
     searchplaceholder: "",
     buttons,
     motto: 'Hello World',
@@ -83,27 +89,6 @@ Page({
       withShareTicket: true
     });    //转发功能
 
-    var that = this;
-    var date1 = new Date;
-    var date2 = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-    var Today;
-    Today = date1.getFullYear() + '-' + (date1.getMonth() + 1) + '-' + date1.getDate() + '   ' + (date2[date1.getDay()]);
-
-    that.setData({
-      searchplaceholder: Today
-    });
-
-    var query = wx.createSelectorQuery();
-    //选择id
-    var that = this;
-    query.select('.topFixedView').boundingClientRect(function (rect) {
-      // console.log(rect.height)
-      that.setData({
-        marginTop: rect.height + 'px'
-      })
-    }).exec();
-
-
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -139,6 +124,35 @@ Page({
         active: 0
       })
     }
+
+    var that = this;
+    var date1 = new Date;
+    var date2 = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var Today;
+    Today = date1.getFullYear() + '-' + (date1.getMonth() + 1) + '-' + date1.getDate() + '   ' + (date2[date1.getDay()]);
+
+    var currentTheme = themeUtil.theme();
+    that.setData({
+      // 当前日期
+      searchplaceholder: Today,
+      // 主题设置
+      theme: currentTheme
+    });
+
+    // 导航背景色和字体颜色
+    wx.setNavigationBarColor({
+      frontColor: currentTheme.frontColor,
+      backgroundColor: currentTheme.color
+    })
+
+    var query = wx.createSelectorQuery();
+    var that = this;
+    query.select('.topFixedView').boundingClientRect(function (rect) {
+      // console.log(rect.height)
+      that.setData({
+        marginTop: rect.height + 'px'
+      })
+    }).exec();
   },
   
   getUserInfo: function(e) {

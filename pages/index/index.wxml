@@ -16,7 +16,7 @@
     </wux-row>
   </view>
 
-  <wux-fab-button class="fab-button" position="bottomRight" theme="darkBlue" direction = "vertical" buttons="{{buttons}}" />
+  <wux-fab-button class="fab-button" position="bottomRight" theme="{{theme.name}}" direction = "vertical" buttons="{{buttons}}" />
 
   <!-- <cover-view class="addTask" style="background-color:{{taskBgColor}}"
    bindtouchstart="addTask" bindtouchend="moveTask">+</cover-view> -->
@@ -26,16 +26,17 @@
         <wux-input
           placeholder="请输入"
           adjust-position= "{{false}}"
+          holdKeyboard="{{true}}"
           bindfocus="inputFocus"
           bindblur="inputblur"
           focus="{{inputShowed}}" >
-          <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="#6491CB"/></view>
+          <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="{{theme.color}}"/></view>
           </wux-input>
     </wux-cell>
     <view>
       <wux-row  wux-class="toolBar" gutter="0">
-        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" color="#6491CB" size="30" /></wux-col>
-        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" color="#6491CB" size="30" /></wux-col>
+        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" color="{{theme.color}}" size="30" /></wux-col>
+        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" color="{{theme.color}}" size="30" /></wux-col>
       </wux-row>
     </view>
   </wux-cell-group>
