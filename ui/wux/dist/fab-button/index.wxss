@@ -26,7 +26,7 @@
 
 .wux-fab-button--bottomRight {
   right: 8rpx;
-  bottom: 100rpx;
+  bottom: 30rpx;
 }
 
 .wux-fab-button--vertical.wux-fab-button--bottomLeft .wux-fab-button__label,
@@ -235,4 +235,10 @@
 .wux-fab-button--dark .wux-fab-button__button,
 .wux-fab-button--dark .wux-fab-button__button--disabled {
   background-color: #444 !important;
+}
+
+.wux-fab-button--darkBlue .wux-fab-button__action,
+.wux-fab-button--darkBlue .wux-fab-button__button,
+.wux-fab-button--darkBlue .wux-fab-button__button--disabled {
+  background-color: #6491CB !important;
 }

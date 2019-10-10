@@ -2,7 +2,11 @@
 <view>
   <!-- 顶部搜索框 -->
   <view class="topFixedView"  >
+<!-- <<<<<<< HEAD -->
     <wux-search-bar clear show-cancel placeholder="{{searchplaceholder}}" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
+<!-- ======= -->
+    <!-- <wux-search-bar show-cancel placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" /> -->
+<!-- >>>>>>> 9a6b77056f75d5c3be1a21007f526e9e01d65578 -->
   </view>
   <!-- <scroll-view class="topFixedView" style="height:54px"></scroll-view> -->
   <!-- <view style="margin-top:{{marginTop}}">
@@ -16,7 +20,7 @@
     </wux-row>
   </view>
 
-  <wux-fab-button class="fab-button" position="bottomRight" theme="positive" direction = "vertical" buttons="{{buttons}}" />
+  <wux-fab-button class="fab-button" position="bottomRight" theme="darkBlue" direction = "vertical" buttons="{{buttons}}" />
 
   <!-- <cover-view class="addTask" style="background-color:{{taskBgColor}}"
    bindtouchstart="addTask" bindtouchend="moveTask">+</cover-view> -->
@@ -29,13 +33,13 @@
           bindfocus="inputFocus"
           bindblur="inputblur"
           focus="{{inputShowed}}" >
-          <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="20" color="#6491CB"/></view>
+          <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="#6491CB"/></view>
           </wux-input>
     </wux-cell>
     <view>
       <wux-row  wux-class="toolBar" gutter="0">
-        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" size="30" /></wux-col>
-        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" size="30" /></wux-col>
+        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" color="#6491CB" size="30" /></wux-col>
+        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" color="#6491CB" size="30" /></wux-col>
       </wux-row>
     </view>
   </wux-cell-group>
