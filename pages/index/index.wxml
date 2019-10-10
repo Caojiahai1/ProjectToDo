@@ -2,11 +2,7 @@
 <view>
   <!-- 顶部搜索框 -->
   <view class="topFixedView"  >
-<!-- <<<<<<< HEAD -->
     <wux-search-bar clear show-cancel placeholder="{{searchplaceholder}}" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
-<!-- ======= -->
-    <!-- <wux-search-bar show-cancel placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" /> -->
-<!-- >>>>>>> 9a6b77056f75d5c3be1a21007f526e9e01d65578 -->
   </view>
   <!-- <scroll-view class="topFixedView" style="height:54px"></scroll-view> -->
   <!-- <view style="margin-top:{{marginTop}}">
