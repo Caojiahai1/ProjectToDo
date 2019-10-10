@@ -147,11 +147,23 @@ Page({
     })
   },
 
-  onChange: function(){
+  onFocus: function(){
     var that = this;
     that.setData({
-      searchplaceholder: "search"
+      searchplaceholder: "搜索指定事项"
     });
+  },
 
+  onBlur:function(){
+    var that = this;
+    var date1 = new Date;
+    var date2 = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var Today;
+    Today = date1.getFullYear() + '-' + (date1.getMonth() + 1) + '-' + date1.getDate() + '   ' + (date2[date1.getDay()]);
+
+    that.setData({
+      searchplaceholder: Today
+    });
   }
+
 })
