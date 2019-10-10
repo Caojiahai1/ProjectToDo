@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view>
+<view class="container">
   <!-- 顶部搜索框 -->
   <view class="topFixedView"  >
     <wux-search-bar clear  placeholder="{{searchplaceholder}}" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
@@ -9,11 +9,23 @@
     <wux-divider position="left" text='任务列表'/>
   </view> -->
   <!-- 任务列表显示 -->
-  <view style="margin-top:{{marginTop}}">
+  <!-- <view style="margin-top:{{marginTop}}">
     <wux-row wx:for="{{ taskList }}" wux-class="taskStyle" gutter="0">
       <wux-col wux-class="taskList1" span="2"><wux-icon type="{{item.icon}}" size="20" /></wux-col>
       <wux-col wux-class="taskList2" span="10"><text>{{item.text}}\n{{item.date}}</text></wux-col>
     </wux-row>
+  </view> -->
+
+  <!-- 事项显示区域 -->
+  <view class = "todo-today1">
+    <view class = "todo-today">
+      <view class = "today-item" wx:for = "{{TodayList}}" wx:key="{{ index }}" bindtap="toggleTodoHandle" id = "{{index}}"   >
+        <icon class = "itemcheckbox"   type = "{{item.completed ? 'success' : 'circle'}}"   color="white"/>
+        <text class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}" >{{item.description}}</text>
+        <!-- {{item.description}} -->
+        <icon class = 'itemremove' type = 'clear' size = '20' color = "white" bindtap="removeTodoHandle" id = '{{index}}' />
+      </view>
+    </view>
   </view>
 
   <wux-fab-button class="fab-button" position="bottomRight" theme="{{theme.name}}" direction = "vertical" buttons="{{buttons}}" />
@@ -24,12 +36,15 @@
   <wux-cell-group class="addTaskInput" style='bottom:{{inputBottom}}px;display:{{inputDisplay}};'>
     <wux-cell>
         <wux-input
+          value = "{{input}}"
           placeholder="请输入"
           adjust-position= "{{false}}"
           holdKeyboard="{{true}}"
           bindfocus="inputFocus"
           bindblur="inputblur"
-          focus="{{inputShowed}}" >
+          focus="{{inputShowed}}"
+          bindchange="AddInput" 
+          bindconfirm="AddConfirm" >
           <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="{{theme.color}}"/></view>
           </wux-input>
     </wux-cell>
