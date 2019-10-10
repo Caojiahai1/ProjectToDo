@@ -15,6 +15,7 @@ const buttons = [
 Page({
   // 页面初始化数据
   data: {
+    searchplaceholder: "",
     buttons,
     motto: 'Hello World',
     userInfo: {},
@@ -62,6 +63,7 @@ Page({
       })
     }
   },
+
   inputblur: function() {
     var that = this;
     that.setData({
@@ -75,7 +77,19 @@ Page({
       url: '../logs/logs'
     })
   },
+
   onLoad: function () {
+
+    var that = this;
+    var date1 = new Date;
+    var date2 = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var Today;
+    Today = date1.getFullYear() + '-' + (date1.getMonth() + 1) + '-' + date1.getDate() + '   ' + (date2[date1.getDay()]);
+
+    that.setData({
+      searchplaceholder: Today
+    });
+
     var query = wx.createSelectorQuery();
     //选择id
     var that = this;
@@ -114,6 +128,7 @@ Page({
       })
     }
   },
+
   onShow: function () {
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
@@ -122,6 +137,7 @@ Page({
       })
     }
   },
+  
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -129,5 +145,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  onChange: function(){
+    var that = this;
+    that.setData({
+      searchplaceholder: "search"
+    });
+
   }
 })
