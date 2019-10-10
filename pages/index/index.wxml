@@ -44,7 +44,7 @@
           focus="{{inputShowed}}"
           bindchange="AddInput" 
           bindconfirm="AddConfirm" >
-          <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="{{theme.color}}"/></view>
+          <!-- <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="{{theme.color}}"/></view> -->
           </wux-input>
     </wux-cell>
     <view>
