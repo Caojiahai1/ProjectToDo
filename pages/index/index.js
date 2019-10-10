@@ -79,6 +79,9 @@ Page({
   },
 
   onLoad: function () {
+    wx.showShareMenu({
+      withShareTicket: true
+    });    //转发功能
 
     var that = this;
     var date1 = new Date;
@@ -147,13 +150,15 @@ Page({
     })
   },
 
+  // 点击搜索框后，显示文字变为搜索指定事项
   onFocus: function(){
     var that = this;
     that.setData({
       searchplaceholder: "搜索指定事项"
-    });
+    });  
   },
 
+  // 离开搜索框后，显示文字变为时间
   onBlur:function(){
     var that = this;
     var date1 = new Date;
@@ -165,5 +170,4 @@ Page({
       searchplaceholder: Today
     });
   }
-
 })
