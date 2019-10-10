@@ -34,6 +34,36 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    requestUrl: "http://localhost:8080",
+    userId: null
+  },
+
+  /**
+  * 封装wx.request请求
+  * method： 请求方式
+  * url: 请求地址
+  * data： 要传递的参数
+  * callback： 请求成功回调函数
+  * errFun： 请求失败回调函数
+  **/
+  wxRequest: function(method, url, data, callback, errFun) {
+    wx.request({
+      url: this.globalData.requestUrl + url,
+      method: method,
+      data: data,
+      header: {
+        'content-type': 'application/json',
+        'Accept': 'application/json',
+        'userId': this.globalData.userId
+      },
+      dataType: 'json',
+      success: function (res) {
+        callback(res.data);
+      },
+      fail: function (err) {
+        errFun(res);
+      }
+    })
   }
 })

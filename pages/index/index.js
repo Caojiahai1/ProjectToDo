@@ -103,7 +103,16 @@ Page({
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
-        })
+        });
+        // // 用户登录
+        // app.wxRequest("POST", "/User/onLine", res.userInfo, 
+        // function(data){
+        //   if (data.resultCode == '200') {
+        //     app.globalData.userId = data.data
+        //   }
+        // }, function(res) {
+
+        // })
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -152,9 +161,11 @@ Page({
     query.select('.topFixedView').boundingClientRect(function (rect) {
       // console.log(rect.height)
       that.setData({
-        marginTop: rect.height + 'px'
+        marginTop: (rect.height + 5) + 'px'
       })
     }).exec();
+
+    that.loadData();
   },
   
   getUserInfo: function(e) {
@@ -187,7 +198,7 @@ Page({
   },
 
 
-// 新增
+  // 新增
   save: function () {
     wx.setStorageSync('TodayList', this.data.TodayList);
   },
@@ -226,12 +237,13 @@ Page({
   AddConfirm: function (e) {
     var that = this;
     var todo = this.data.TodayList;
-    todo.push({ description: this.data.input, completed: false })
+    todo.push({ description: e.detail.value, completed: false })
     //更新数据
     that.setData({ TodayList: todo, input: '' });
     //输出日志信息
     console.log(this.data.TodayList)
     //保存记录到本地
+    that.save();
   },
   // 清除一条记录
   removeTodoHandle: function (e) {

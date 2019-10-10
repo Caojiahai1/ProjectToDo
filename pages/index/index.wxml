@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view>
   <!-- 顶部搜索框 -->
   <view class="topFixedView"  >
     <wux-search-bar clear  placeholder="{{searchplaceholder}}" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
@@ -17,14 +17,12 @@
   </view> -->
 
   <!-- 事项显示区域 -->
-  <view class = "todo-today1">
-    <view class = "todo-today">
-      <view class = "today-item" wx:for = "{{TodayList}}" wx:key="{{ index }}" bindtap="toggleTodoHandle" id = "{{index}}"   >
-        <icon class = "itemcheckbox"   type = "{{item.completed ? 'success' : 'circle'}}"   color="white"/>
-        <text class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}" >{{item.description}}</text>
-        <!-- {{item.description}} -->
-        <icon class = 'itemremove' type = 'clear' size = '20' color = "white" bindtap="removeTodoHandle" id = '{{index}}' />
-      </view>
+  <view class = "todo-today" style="margin-top:{{marginTop}}">
+    <view class = "today-item" style="background-color:{{theme.color}}" wx:for = "{{TodayList}}" wx:key="{{ index }}" bindtap="toggleTodoHandle" id = "{{index}}"   >
+      <icon class = "itemcheckbox"   type = "{{item.completed ? 'success' : 'circle'}}"   color="white"/>
+      <text class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}" >{{item.description}}</text>
+      <!-- {{item.description}} -->
+      <icon class = 'itemremove' type = 'clear' size = '20' color = "white" bindtap="removeTodoHandle" id = '{{index}}' />
     </view>
   </view>
 
@@ -36,7 +34,8 @@
   <wux-cell-group class="addTaskInput" style='bottom:{{inputBottom}}px;display:{{inputDisplay}};'>
     <wux-cell>
         <wux-input
-          value = "{{input}}"
+          controlled="{{true}}"
+          value="{{input}}"
           placeholder="请输入"
           adjust-position= "{{false}}"
           holdKeyboard="{{true}}"

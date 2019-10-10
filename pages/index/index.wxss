@@ -87,14 +87,11 @@ page {
   vertical-align: center;
   margin: 2px;
 }
-.todo-today1{
-  width: 100%;
-}
 .today-item{
   display: flex;
   flex-direction: row;
   padding: 20rpx;
-  background-color: #00a2ea;
+  /* background-color: #00a2ea; */
   border: 10rpx solid white;
   border-radius: 20rpx;
 }
