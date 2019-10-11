@@ -1,5 +1,31 @@
 /**index.wxss**/
 
+/* @keyframes remindMessage {
+  0% {
+    -webkit-transform: translateX(90%);
+  }
+ 
+  100% {
+    -webkit-transform: translateX(-180%);
+  }
+}
+ 
+.tongzhitext {
+  line-height: 50rpx;
+  margin-left:10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ 
+.tongzhi-text {
+  font-size: 28rpx;
+animation: remindMessage 10s linear infinite;
+    width: 100%;
+  color: #000;
+  display: block;
+} */
+
 .container{
   display: flex;
   flex-direction: column;
@@ -33,7 +59,7 @@
 
 /* 顶部搜索框样式，固定在顶部 */
 .topFixedView {
-  position: fixed;
+  position: flex;
   top: 0rpx;
   width: 100%;
   display: block;

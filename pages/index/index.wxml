@@ -1,6 +1,10 @@
 <!--index.wxml-->
 <view>
   <!-- 顶部搜索框 -->
+  <!-- <view  class='tongzhitext'>
+      <text class="tongzhi-text">注意，这不是演习！</text>
+  </view>  -->
+
   <view class="topFixedView"  >
     <wux-search-bar clear  placeholder="{{searchplaceholder}}" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
   </view>
