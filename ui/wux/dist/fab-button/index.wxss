@@ -26,7 +26,7 @@
 
 .wux-fab-button--bottomRight {
   right: 8rpx;
-  bottom: 30rpx;
+  bottom: 100rpx;
 }
 
 .wux-fab-button--vertical.wux-fab-button--bottomLeft .wux-fab-button__label,

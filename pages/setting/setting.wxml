@@ -1,15 +1,20 @@
 <view >
     <view>
         <wux-form id="wux-form" bind:change="onChange">
-            <wux-field name="theme" initialValue="{{ theme }}">
+            <!-- <wux-field name="theme" initialValue="{{ theme }}">
                 <wux-radio-group title="主题" bind:change="changeTheme">
                     <wux-radio wx:for="{{ themeList }}"  title="{{item}}" color="{{item}}" value="{{item}}" />
                 </wux-radio-group>
-            </wux-field>
+            </wux-field> -->
             <!-- <view class="btn-area">
                 <button bindtap="onSubmit">Wux Form Submit</button>
                 <button bindtap="onReset">Wux Form Reset</button>
             </view> -->
+            <wux-cell-group>
+              <wux-picker itemStyle="font:red" options="{{ themeOptions }}" value="{{ themeValue }}" cascade cols="1" bind:confirm="confirmTheme" bind:valueChange="themeChange">
+                  <wux-cell title="主题" is-link extra="{{ themeName }}"></wux-cell>
+              </wux-picker>
+            </wux-cell-group>
         </wux-form>
     </view>
 </view>
