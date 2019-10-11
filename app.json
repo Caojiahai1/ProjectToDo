@@ -21,9 +21,7 @@
     "wux-fab-button": "ui/wux/dist/fab-button/index",
     "wux-icon": "ui/wux/dist/icon/index",
     "wux-button": "ui/wux/dist/button/index",
-<<<<<<< Updated upstream
-    "wux-cascader": "ui/wux/dist/cascader/index"
-=======
+    "wux-cascader": "ui/wux/dist/cascader/index",
     "wux-form": "ui/wux/dist/form/index",
     "wux-field": "ui/wux/dist/field/index",
     "wux-slider": "ui/wux/dist/slider/index",
@@ -37,6 +35,5 @@
     "wux-picker": "ui/wux/dist/picker/index",
     "wux-date-picker": "ui/wux/dist/date-picker/index",
     "wux-popup-select": "ui/wux/dist/popup-select/index"
->>>>>>> Stashed changes
   }
 }
