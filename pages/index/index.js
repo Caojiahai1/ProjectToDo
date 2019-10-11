@@ -45,7 +45,27 @@ Page({
     inputDisplay: "none",
     inputShowed: false,
     TodayList:[],
-    input:""
+    input:"",
+    // 评分级联选择框
+    visible1:false,
+    value1:[],
+    options1: [
+      {
+        value: 'youxianji',
+        label: '优先级',
+        isLeaf: false,
+      },
+      {
+        value: 'jiong',
+        label: '囧',
+        isLeaf: false,
+      },
+      {
+        value: 'diao',
+        label: '屌',
+        isLeaf: false,
+      },
+    ],
   },
 
   addTask: function() {
@@ -259,4 +279,76 @@ Page({
     this.save();
   },
 
+  //点击评级按钮出现评级选择框
+  openrating() {
+    this.setData({ visible1: true })
+  },
+  //关闭评级选择框
+  closerating() {
+    this.setData({ visible1: false })
+  },
+  onChange1(e) {
+    this.setData({ title1: e.detail.options.map((n) => n.label).join('/') })
+    console.log('onChange1', e.detail)
+  },
+  onLoadOptions(e) {
+    console.log('onLoadOptions', e.detail)
+    const { value } = e.detail
+    const options1 = [...this.data.options1]
+
+    wx.showLoading({ mask: true })
+
+    setTimeout(() => {
+      if (value[value.length - 1] === 'youxianji') {
+        options1.forEach((n) => {
+          if (n.value === 'youxianji') {
+            n.children = [
+              {
+                value: '1',
+                label: '1'
+              },
+              {
+                value: '2',
+                label: '2'
+              },
+            ]
+          }
+        })
+      } else if (value[value.length - 1] === 'jiong') {
+        options1.forEach((n) => {
+          if (n.value === 'jiong') {
+            n.children = [
+              {
+                value: '1',
+                label: '1'
+              },
+              {
+                value: '2',
+                label: '2'
+              },
+            ]
+          }
+        })
+      } else if (value[value.length - 1] === 'diao') {
+        options1.forEach((n) => {
+          if (n.value === 'diao') {
+            n.children = [
+              {
+                value: '1',
+                label: '1'
+              },
+              {
+                value: '2',
+                label: '2'
+              },
+            ]
+          }
+        })
+      }
+
+      wx.hideLoading()
+
+      this.setData({ value1: value, options1 })
+    }, 1000)
+  },
 })

@@ -26,6 +26,7 @@
     </view>
   </view>
 
+<!-- 添加按钮 -->
   <wux-fab-button class="fab-button" position="bottomRight" theme="{{theme.name}}" direction = "vertical" buttons="{{buttons}}" />
 
   <!-- <cover-view class="addTask" style="background-color:{{taskBgColor}}"
@@ -50,9 +51,13 @@
     <view>
       <wux-row  wux-class="toolBar" gutter="0">
         <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" color="{{theme.color}}" size="30" /></wux-col>
-        <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" color="{{theme.color}}" size="30" /></wux-col>
+        <wux-col wux-class="toolBarButton" span="2"><wux-button clear bindtap="openrating"><wux-icon type="ios-star-half" size="30" color="{{theme.color}}"/></wux-button></wux-col>
+        <!-- <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" color="{{theme.color}}" size="30" /></wux-col> -->
       </wux-row>
     </view>
   </wux-cell-group>
-  
+
+<!-- 评级选择框  -->
+<wux-cascader visible="{{ visible1 }}" default-value="{{ value1 }}" title="评级" options="{{ options1 }}" bind:close="closerating" bind:change="onChange1" bind:load="onLoadOptions"  />
+
 </view>

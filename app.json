@@ -19,6 +19,7 @@
     "wux-input": "ui/wux/dist/input/index",
     "wux-fab-button": "ui/wux/dist/fab-button/index",
     "wux-icon": "ui/wux/dist/icon/index",
-    "wux-button": "ui/wux/dist/button/index"
+    "wux-button": "ui/wux/dist/button/index",
+    "wux-cascader": "ui/wux/dist/cascader/index"
   }
 }
