@@ -58,6 +58,17 @@
   </wux-cell-group>
 
 <!-- 评级选择框  -->
-<wux-cascader visible="{{ visible1 }}" default-value="{{ value1 }}" title="评级" options="{{ options1 }}" bind:close="closerating" bind:change="onChange1" bind:load="onLoadOptions"  />
+<!-- <wux-cascader visible="{{ visible1 }}" default-value="{{ value1 }}" title="评级" options="{{ options1 }}" bind:close="closerating" bind:change="onChange1" bind:load="onLoadOptions"  /> -->
+
+<!-- <wux-actionsheet id="wux-actionsheet" /> -->
+<!-- <wux-popup position="bottom" visible="{{ visible1 }}" bind:close="onClose2">
+    <wux-cell-group title="Your fathers">
+        <wux-cell hover-class="none" title="Jack Ma"></wux-cell>
+        <wux-cell hover-class="none" title="Pony"></wux-cell>
+        <wux-cell hover-class="none">
+            <wux-button block type="balanced" bindtap="close2">Yes</wux-button>
+        </wux-cell>
+    </wux-cell-group>
+</wux-popup> -->
 
 </view>

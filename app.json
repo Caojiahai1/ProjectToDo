@@ -34,6 +34,8 @@
     "wux-switch": "ui/wux/dist/switch/index",
     "wux-picker": "ui/wux/dist/picker/index",
     "wux-date-picker": "ui/wux/dist/date-picker/index",
-    "wux-popup-select": "ui/wux/dist/popup-select/index"
+    "wux-popup-select": "ui/wux/dist/popup-select/index",
+    "wux-popup": "ui/wux/dist/popup/index",
+    "wux-actionsheet": "ui/wux/dist/actionsheet/index"
   }
 }
