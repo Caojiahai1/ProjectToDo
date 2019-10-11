@@ -11,6 +11,9 @@ const buttons = [
   {
     label: '设置',
     iconType: 'ios-settings',
+    click: function() {
+      console.log(11111111)
+    }
   }
 ]
 
@@ -162,7 +165,7 @@ Page({
     var Today;
     Today = date1.getFullYear() + '-' + (date1.getMonth() + 1) + '-' + date1.getDate() + '   ' + (date2[date1.getDay()]);
 
-    var currentTheme = themeUtil.theme();
+    var currentTheme = themeUtil.theme(app.globalData.theme);
     that.setData({
       // 当前日期
       searchplaceholder: Today,

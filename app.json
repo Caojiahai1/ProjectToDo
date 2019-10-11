@@ -5,7 +5,8 @@
     "navigationBarTextStyle": "black"
   },
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/setting/setting"
   ],
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
@@ -20,6 +21,22 @@
     "wux-fab-button": "ui/wux/dist/fab-button/index",
     "wux-icon": "ui/wux/dist/icon/index",
     "wux-button": "ui/wux/dist/button/index",
+<<<<<<< Updated upstream
     "wux-cascader": "ui/wux/dist/cascader/index"
+=======
+    "wux-form": "ui/wux/dist/form/index",
+    "wux-field": "ui/wux/dist/field/index",
+    "wux-slider": "ui/wux/dist/slider/index",
+    "wux-rater": "ui/wux/dist/rater/index",
+    "wux-input-number": "ui/wux/dist/input-number/index",
+    "wux-checkbox-group": "ui/wux/dist/checkbox-group/index",
+    "wux-checkbox": "ui/wux/dist/checkbox/index",
+    "wux-radio-group": "ui/wux/dist/radio-group/index",
+    "wux-radio": "ui/wux/dist/radio/index",
+    "wux-switch": "ui/wux/dist/switch/index",
+    "wux-picker": "ui/wux/dist/picker/index",
+    "wux-date-picker": "ui/wux/dist/date-picker/index",
+    "wux-popup-select": "ui/wux/dist/popup-select/index"
+>>>>>>> Stashed changes
   }
 }

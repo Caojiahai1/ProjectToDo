@@ -1,5 +1,6 @@
 /**app.wxss**/
 /* @import "ui/vant/dist/common/index.wxss"; */
+@import 'ui/wux/dist/styles/index.wxss';
 .container {
   height: 100%;
   display: flex;

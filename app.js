@@ -5,7 +5,10 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var theme = wx.getStorageSync('theme');
+    if (theme != null && theme != '') {
+      this.globalData.theme = theme;
+    }
     // 登录
     wx.login({
       success: res => {
@@ -36,7 +39,8 @@ App({
   globalData: {
     userInfo: null,
     requestUrl: "http://localhost:8080",
-    userId: null
+    userId: null,
+    theme: 'royal'
   },
 
   /**

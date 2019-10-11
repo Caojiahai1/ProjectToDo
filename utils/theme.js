@@ -1,5 +1,5 @@
 const themeList = {
-  blueDark : {
+  darkBlue : {
     name : 'darkBlue',
     color: '#6491CB',
     frontColor: '#ffffff'
@@ -32,10 +32,11 @@ const themeList = {
 }
 
 // 选择主题
-const theme = function() {
-  return themeList.royal;
+const theme = function (themeName) {
+  return themeList[themeName];
 }
 
 module.exports = {
-  theme: theme
+  theme: theme,
+  themeList: themeList
 }

@@ -1,0 +1,15 @@
+<view >
+    <view>
+        <wux-form id="wux-form" bind:change="onChange">
+            <wux-field name="theme" initialValue="{{ theme }}">
+                <wux-radio-group title="主题" bind:change="changeTheme">
+                    <wux-radio wx:for="{{ themeList }}"  title="{{item}}" color="{{item}}" value="{{item}}" />
+                </wux-radio-group>
+            </wux-field>
+            <!-- <view class="btn-area">
+                <button bindtap="onSubmit">Wux Form Submit</button>
+                <button bindtap="onReset">Wux Form Reset</button>
+            </view> -->
+        </wux-form>
+    </view>
+</view>
