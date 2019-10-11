@@ -94,6 +94,7 @@ page {
   /* background-color: #00a2ea; */
   border: 10rpx solid white;
   border-radius: 20rpx;
+  margin-top: 5rpx;
 }
 .itemdescriptiont{
   flex: 1;

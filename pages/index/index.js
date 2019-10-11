@@ -110,9 +110,10 @@ Page({
   // },
 
   onLoad: function () {
+    //转发功能
     wx.showShareMenu({
       withShareTicket: true
-    });    //转发功能
+    });    
 
     if (app.globalData.userInfo) {
       this.setData({

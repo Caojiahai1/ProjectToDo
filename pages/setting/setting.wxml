@@ -1,5 +1,8 @@
 <view >
     <view>
+        <view class="logo">
+            <image class="imageLogo" src="../../img/logo.gif" loading="Loading" />
+        </view>
         <wux-form id="wux-form" bind:change="onChange">
             <!-- <wux-field name="theme" initialValue="{{ theme }}">
                 <wux-radio-group title="主题" bind:change="changeTheme">
@@ -11,10 +14,15 @@
                 <button bindtap="onReset">Wux Form Reset</button>
             </view> -->
             <wux-cell-group>
-              <wux-picker itemStyle="font:red" options="{{ themeOptions }}" value="{{ themeValue }}" cascade cols="1" bind:confirm="confirmTheme" bind:valueChange="themeChange">
+              <wux-picker itemStyle="font:red" itemHeight="50" options="{{ themeOptions }}" value="{{ themeValue }}" cascade cols="1" bind:confirm="confirmTheme" bind:valueChange="themeChange">
                   <wux-cell title="主题" is-link extra="{{ themeName }}"></wux-cell>
               </wux-picker>
             </wux-cell-group>
         </wux-form>
+        <wux-button block type="{{ themeName }}" open-type='feedback'>用户反馈</wux-button>
+        <!-- <button class='btn1' open-type='feedback'>
+            
+            <view>用户反馈</view>
+        </button> -->
     </view>
 </view>

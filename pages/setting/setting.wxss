@@ -1,0 +1,34 @@
+
+/* 页面背景色 */
+page {
+  background-color: rgb(243, 240, 240)
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.imageLogo {
+  width:200rpx;
+  height:200rpx
+}
+.btn1{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 400rpx;
+  background-color: rgb(243, 240, 240);
+  color: #999999;
+  border-radius: 0rpx;
+  border:none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+}
+
+.btnImg {
+  width: 50rpx;
+  height: 50rpx;
+}

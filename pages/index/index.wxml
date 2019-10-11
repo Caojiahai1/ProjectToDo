@@ -48,13 +48,12 @@
           <!-- <view slot="footer" style="margin-left: 5px"><wux-icon type="md-send" size="22" color="{{theme.color}}"/></view> -->
           </wux-input>
     </wux-cell>
-    <view>
+    <!-- <view>
       <wux-row  wux-class="toolBar" gutter="0">
         <wux-col wux-class="toolBarButton" span="2"><wux-icon type="md-alarm" color="{{theme.color}}" size="30" /></wux-col>
         <wux-col wux-class="toolBarButton" span="2"><wux-button clear bindtap="openrating"><wux-icon type="ios-star-half" size="30" color="{{theme.color}}"/></wux-button></wux-col>
-        <!-- <wux-col wux-class="toolBarButton" span="2"><wux-icon type="ios-star-half" color="{{theme.color}}" size="30" /></wux-col> -->
       </wux-row>
-    </view>
+    </view> -->
   </wux-cell-group>
 
 <!-- 评级选择框  -->

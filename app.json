@@ -36,6 +36,7 @@
     "wux-date-picker": "ui/wux/dist/date-picker/index",
     "wux-popup-select": "ui/wux/dist/popup-select/index",
     "wux-popup": "ui/wux/dist/popup/index",
-    "wux-actionsheet": "ui/wux/dist/actionsheet/index"
+    "wux-actionsheet": "ui/wux/dist/actionsheet/index",
+    "wux-image": "ui/wux/dist/image/index"
   }
 }

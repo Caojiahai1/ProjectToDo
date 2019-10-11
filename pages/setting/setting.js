@@ -37,7 +37,10 @@ Page({
     themeOptions: themeList
   },
   onLoad: function () {
-    
+    //转发功能
+    wx.showShareMenu({
+      withShareTicket: true
+    }); 
   },
   // 渲染
   onShow: function () {
