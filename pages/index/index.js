@@ -10,10 +10,7 @@ const buttons = [
   },
   {
     label: '设置',
-    iconType: 'ios-settings',
-    click: function() {
-      console.log(11111111)
-    }
+    iconType: 'ios-settings'
   }
 ]
 
@@ -49,6 +46,9 @@ Page({
     inputShowed: false,
     TodayList:[],
     input:"",
+    // 确认删除弹出框控制
+    confirmDelete: false,
+    currentDeleteIndex: -1,
     // 评分级联选择框
     visible1:false,
     value1:[],
@@ -224,7 +224,25 @@ Page({
 
   // 新增
   save: function () {
+    this.sort();
     wx.setStorageSync('TodayList', this.data.TodayList);
+  },
+  // 任务排序
+  sort: function () {
+    var todo = this.data.TodayList;
+    var compeledList = [];
+    var unCompeledList = [];
+    for (var index in todo) {
+      if (todo[index].completed) {
+        compeledList.push(todo[index]);
+      } else {
+        unCompeledList.push(todo[index]);
+      }
+    };
+    var tempTodo = unCompeledList.concat(compeledList);
+    this.setData({
+      TodayList: tempTodo
+    });
   },
 
   loadData: function () {
@@ -271,16 +289,28 @@ Page({
   },
   // 清除一条记录
   removeTodoHandle: function (e) {
+    this.setData({
+      confirmDelete: true,
+      currentDeleteIndex: e.currentTarget.id
+    });
+  },
+  removeTodoConfirm: function() {
     var todo = this.data.TodayList;
-    var index = e.currentTarget.id;
+    var index = this.data.currentDeleteIndex;
     //删除数据
     todo.splice(index, 1);
-    console.log(todo);
     //设置数据
     this.setData({
       TodayList: todo
     });
     this.save();
+    this.closeConfirmWin();
+  },
+  closeConfirmWin: function() {
+    this.setData({
+      confirmDelete: false,
+      currentDeleteIndex: -1
+    });
   },
 
   //点击评级按钮出现评级选择框

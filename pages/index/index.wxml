@@ -22,8 +22,8 @@
 
   <!-- 事项显示区域 -->
   <view class = "todo-today" style="margin-top:{{marginTop}}">
-    <view class = "today-item" style="background-color:{{theme.color}}" wx:for = "{{TodayList}}" wx:key="{{ index }}" bindtap="toggleTodoHandle" id = "{{index}}"   >
-      <icon class = "itemcheckbox"   type = "{{item.completed ? 'success' : 'circle'}}"   color="white"/>
+    <view class = "today-item" style="background-color:{{theme.color}}" wx:for = "{{TodayList}}" wx:key="{{ index }}" id = "{{index}}"   >
+      <icon class = "itemcheckbox"   type = "{{item.completed ? 'success' : 'circle'}}"  id = "{{index}}" bindtap="toggleTodoHandle" color="white"/>
       <text class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}" >{{item.description}}</text>
       <!-- {{item.description}} -->
       <icon class = 'itemremove' type = 'clear' size = '20' color = "white" bindtap="removeTodoHandle" id = '{{index}}' />
@@ -73,5 +73,9 @@
         </wux-cell>
     </wux-cell-group>
 </wux-popup> -->
+
+<wux-popup closable mask visible="{{ confirmDelete }}" title="Delete" content="是否确认删除?" bind:close="closeConfirmWin">
+    <view ><wux-button block type="{{ theme.name }}" bindtap="removeTodoConfirm">OK</wux-button></view>
+</wux-popup>
 
 </view>

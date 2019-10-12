@@ -59,7 +59,7 @@ animation: remindMessage 10s linear infinite;
 
 /* 顶部搜索框样式，固定在顶部 */
 .topFixedView {
-  position: flex;
+  position: fixed;
   top: 0rpx;
   width: 100%;
   display: block;
