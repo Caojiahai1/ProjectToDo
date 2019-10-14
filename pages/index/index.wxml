@@ -19,10 +19,10 @@
       <wux-col wux-class="taskList2" span="10"><text>{{item.text}}\n{{item.date}}</text></wux-col>
     </wux-row>
   </view> -->
-
+<!-- {{item.completed ? theme.color : theme.completedColor}} -->
   <!-- 事项显示区域 -->
   <view class = "todo-today" style="margin-top:{{marginTop}}">
-    <view class = "today-item" style="background-color:{{theme.color}}" wx:for = "{{TodayList}}" wx:key="{{ index }}" id = "{{index}}"   >
+    <view class = "today-item" style="background-color:{{item.completed ? theme.completedColor : theme.color}}" wx:for = "{{TodayList}}" wx:key="{{ index }}" id = "{{index}}"   >
       <icon class = "itemcheckbox"   type = "{{item.completed ? 'success' : 'circle'}}"  id = "{{index}}" bindtap="toggleTodoHandle" color="white"/>
       <text class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}" >{{item.description}}</text>
       <!-- {{item.description}} -->
